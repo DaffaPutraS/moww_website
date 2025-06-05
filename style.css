@@ -1,0 +1,555 @@
+/* Base styling */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #ffcdd2, #f8bbd0, #e1bee7);
+    background-attachment: fixed;
+    color: #333;
+    overflow-x: hidden;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    position: relative;
+    min-height: 100vh;
+}
+
+/* Initial heart animation */
+.heart-container {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+    background: linear-gradient(135deg, #ffcdd2, #f8bbd0, #e1bee7);
+    transition: opacity 1s ease-in-out;
+}
+
+.heart {
+    width: 100px;
+    height: 100px;
+    background-color: #ff4081;
+    position: relative;
+    transform: rotate(45deg);
+    animation: heartbeat 1.2s infinite;
+}
+
+.heart:before,
+.heart:after {
+    content: "";
+    width: 100px;
+    height: 100px;
+    background-color: #ff4081;
+    border-radius: 50%;
+    position: absolute;
+}
+
+.heart:before {
+    top: -50px;
+    left: 0;
+}
+
+.heart:after {
+    top: 0;
+    left: -50px;
+}
+
+@keyframes heartbeat {
+    0% {
+        transform: rotate(45deg) scale(0.8);
+    }
+    5% {
+        transform: rotate(45deg) scale(0.9);
+    }
+    10% {
+        transform: rotate(45deg) scale(0.8);
+    }
+    15% {
+        transform: rotate(45deg) scale(1);
+    }
+    50% {
+        transform: rotate(45deg) scale(0.8);
+    }
+    100% {
+        transform: rotate(45deg) scale(0.8);
+    }
+}
+
+/* Main content */
+.content {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 1s ease-in-out;
+}
+
+.content.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.hidden {
+    display: none;
+}
+
+.title {
+    text-align: center;
+    font-family: 'Dancing Script', cursive;
+    font-size: 3.5rem;
+    color: #d81b60;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+    animation: fadeIn 2s;
+}
+
+.message {
+    text-align: center;
+    font-size: 1.3rem;
+    margin-bottom: 50px;
+    color: #6a1b9a;
+    animation: fadeIn 2s 0.5s both;
+}
+
+/* Gallery section */
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    margin-bottom: 50px;
+}
+
+.photo-container {
+    perspective: 1000px;
+}
+
+.polaroid {
+    width: 250px;
+    background-color: white;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    padding: 15px 15px 40px 15px;
+    cursor: pointer;
+    transition: transform 0.5s ease;
+    transform-style: preserve-3d;
+}
+
+.polaroid:hover {
+    transform: rotateY(10deg) rotateX(5deg);
+}
+
+.polaroid img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    margin-bottom: 10px;
+}
+
+.caption {
+    text-align: center;
+    font-family: 'Dancing Script', cursive;
+    font-size: 1.2rem;
+}
+
+/* Message section */
+.message-section {
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 15px;
+    padding: 30px;
+    margin-bottom: 50px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    animation: fadeIn 1.5s 1s both;
+}
+
+.message-section h2 {
+    font-family: 'Dancing Script', cursive;
+    font-size: 2rem;
+    text-align: center;
+    color: #c2185b;
+    margin-bottom: 20px;
+}
+
+.reasons-container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.reason {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    opacity: 0;
+    transform: translateX(-20px);
+}
+
+.reason i {
+    color: #ff4081;
+    font-size: 1.5rem;
+}
+
+.reason p {
+    font-size: 1.1rem;
+}
+
+/* Special moment section */
+.special-moment {
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 15px;
+    padding: 30px;
+    margin-bottom: 50px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    animation: fadeIn 1.5s 1.5s both;
+}
+
+.special-moment h2 {
+    font-family: 'Dancing Script', cursive;
+    font-size: 2rem;
+    text-align: center;
+    color: #c2185b;
+    margin-bottom: 20px;
+}
+
+.music-player {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    background-color: rgba(233, 30, 99, 0.1);
+    border-radius: 50px;
+    padding: 15px 25px;
+}
+
+#play-button {
+    font-size: 1.5rem;
+    color: #d81b60;
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+
+#play-button:hover {
+    transform: scale(1.2);
+}
+
+.track-info {
+    flex: 1;
+}
+
+.song-title {
+    font-weight: 600;
+    font-size: 1.1rem;
+    margin-bottom: 5px;
+}
+
+.artist {
+    font-size: 0.9rem;
+    color: #666;
+}
+
+.progress-bar {
+    height: 5px;
+    background-color: rgba(233, 30, 99, 0.2);
+    border-radius: 5px;
+    width: 150px;
+    overflow: hidden;
+}
+
+.progress {
+    height: 100%;
+    background-color: #d81b60;
+    width: 0%;
+    transition: width 0.1s linear;
+}
+
+/* Letter section */
+.letter {
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 15px;
+    padding: 30px;
+    margin-bottom: 50px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    animation: fadeIn 1.5s 2s both;
+}
+
+.letter h2 {
+    font-family: 'Dancing Script', cursive;
+    font-size: 2rem;
+    text-align: center;
+    color: #c2185b;
+    margin-bottom: 20px;
+}
+
+.letter-content {
+    line-height: 1.8;
+    font-size: 1.1rem;
+}
+
+.letter-content p {
+    margin-bottom: 15px;
+}
+
+.signature {
+    font-family: 'Dancing Script', cursive;
+    font-size: 1.5rem;
+    text-align: right;
+    color: #c2185b;
+    margin-top: 10px;
+}
+
+/* Special button */
+.special-button {
+    display: block;
+    margin: 0 auto 50px;
+    padding: 15px 30px;
+    background: linear-gradient(to right, #ff4081, #c2185b);
+    border: none;
+    border-radius: 50px;
+    color: white;
+    font-size: 1.2rem;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+    animation: pulse 2s infinite;
+}
+
+.special-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 7px 20px rgba(0, 0, 0, 0.3);
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* Decorative elements */
+.flowers {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    z-index: -1;
+}
+
+.flower {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%23ff80ab"><path d="M12,2A10,10 0 0,1 22,12A10,10 0 0,1 12,22A10,10 0 0,1 2,12A10,10 0 0,1 12,2Z" /></svg>');
+    background-size: contain;
+    animation: float 20s linear infinite;
+    opacity: 0.5;
+}
+
+.flower1 {
+    top: 10%;
+    left: 5%;
+    animation-duration: 25s;
+    animation-delay: -2s;
+}
+
+.flower2 {
+    top: 60%;
+    left: 90%;
+    animation-duration: 22s;
+    animation-delay: -5s;
+}
+
+.flower3 {
+    top: 80%;
+    left: 15%;
+    animation-duration: 18s;
+    animation-delay: -7s;
+}
+
+.flower4 {
+    top: 30%;
+    left: 80%;
+    animation-duration: 20s;
+    animation-delay: -10s;
+}
+
+@keyframes float {
+    0% {
+        transform: translate(0, 0) rotate(0deg);
+        opacity: 0.5;
+    }
+    25% {
+        transform: translate(100px, 100px) rotate(90deg);
+        opacity: 0.7;
+    }
+    50% {
+        transform: translate(200px, 50px) rotate(180deg);
+        opacity: 0.5;
+    }
+    75% {
+        transform: translate(100px, -100px) rotate(270deg);
+        opacity: 0.7;
+    }
+    100% {
+        transform: translate(0, 0) rotate(360deg);
+        opacity: 0.5;
+    }
+}
+
+/* Modal Styling */
+.message-modal, .surprise-modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    animation: fadeIn 0.3s;
+}
+
+.modal-content {
+    background-color: white;
+    margin: 10% auto;
+    padding: 30px;
+    border-radius: 15px;
+    width: 80%;
+    max-width: 500px;
+    box-shadow: 0 5px 30px rgba(0, 0, 0, 0.3);
+    animation: modalDrop 0.5s;
+    position: relative;
+    text-align: center;
+}
+
+.close-button, .close-surprise {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+#modal-message {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    padding: 20px 0;
+}
+
+@keyframes modalDrop {
+    from {
+        transform: translateY(-50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* Surprise modal specific styles */
+.surprise-modal .modal-content {
+    background: linear-gradient(135deg, #ffcdd2, #f8bbd0, #e1bee7);
+    padding: 40px;
+}
+
+.surprise-modal h2 {
+    font-family: 'Dancing Script', cursive;
+    font-size: 3rem;
+    color: #c2185b;
+    margin-bottom: 20px;
+    animation: heartBeat 1s infinite;
+}
+
+.flying-hearts-container {
+    position: relative;
+    height: 100px;
+    margin: 20px 0;
+    overflow: hidden;
+}
+
+.kiss {
+    font-size: 4rem;
+    margin-top: 20px;
+    animation: kiss 2s infinite;
+}
+
+@keyframes kiss {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.2);
+    }
+}
+
+@keyframes heartBeat {
+    0% {
+        transform: scale(1);
+    }
+    14% {
+        transform: scale(1.1);
+    }
+    28% {
+        transform: scale(1);
+    }
+    42% {
+        transform: scale(1.1);
+    }
+    70% {
+        transform: scale(1);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .title {
+        font-size: 2.5rem;
+    }
+    
+    .message {
+        font-size: 1.1rem;
+    }
+    
+    .gallery {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .music-player {
+        flex-direction: column;
+        padding: 15px;
+    }
+    
+    .progress-bar {
+        width: 100%;
+        margin-top: 10px;
+    }
+    
+    .modal-content {
+        width: 95%;
+        padding: 20px;
+        margin: 30% auto;
+    }
+}
