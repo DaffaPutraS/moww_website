@@ -95,7 +95,7 @@ body::before {
 
 .container {
     width: 100%;
-    max-width: 1200px; /* atau sesuai kebutuhan */
+    max-width: 1000px; /* atau sesuai kebutuhan */
     margin: 40px auto 0 auto; /* Jarak dari atas, center horizontal */
     position: relative;
     display: block; /* Tidak perlu flex di sini */
@@ -584,6 +584,66 @@ h2 {
 
 .confetti-button:active {
     transform: translateY(0);
+}
+
+/* Photo Popup */
+.photo-popup {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    left: 0; top: 0;
+    width: 100vw; height: 100vh;
+    background: rgba(0,0,0,0.6);
+    justify-content: center;
+    align-items: center;
+}
+
+.photo-popup.active {
+    display: flex;
+    animation: fadeIn 0.4s;
+}
+
+.popup-content {
+    background: #fff;
+    border-radius: 16px;
+    padding: 30px 20px;
+    max-width: 90vw;
+    max-height: 80vh;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.2);
+    position: relative;
+    text-align: center;
+    overflow: auto;
+}
+
+.close-popup {
+    position: absolute;
+    top: 12px;
+    right: 18px;
+    font-size: 2rem;
+    color: #e74c3c;
+    cursor: pointer;
+    font-weight: bold;
+    z-index: 2;
+}
+
+.popup-gallery {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.popup-gallery img {
+    width: 140px;
+    height: 140px;
+    object-fit: cover;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    transition: transform 0.2s;
+}
+.popup-gallery img:hover {
+    transform: scale(1.07);
 }
 
 /* Responsive Styles */

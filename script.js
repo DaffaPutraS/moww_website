@@ -181,8 +181,10 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
     
-    // Confetti animation
+    // Popup Kompilasi Foto
     const confettiButton = document.getElementById('confetti-button');
+    const photoPopup = document.getElementById('photo-popup');
+    const closePopup = document.getElementById('close-popup');
     
     confettiButton.addEventListener('click', function() {
         const duration = 5 * 1000;
@@ -239,6 +241,19 @@ document.addEventListener('DOMContentLoaded', function() {
                     disableForReducedMotion: true
                 });
             }, i * 700);
+        }
+        
+        photoPopup.classList.add('active');
+    });
+    
+    closePopup.addEventListener('click', function() {
+        photoPopup.classList.remove('active');
+    });
+    
+    // Optional: klik di luar popup-content untuk menutup
+    photoPopup.addEventListener('click', function(e) {
+        if (e.target === photoPopup) {
+            photoPopup.classList.remove('active');
         }
     });
     
