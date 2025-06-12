@@ -3,122 +3,123 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>For My Love</title>
+    <title>Happy Anniversary My Love</title>
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
 </head>
 <body>
+    <!-- Floating Hearts Background -->
+    <div class="floating-bg-hearts"></div>
+    
+    <!-- Existing content -->
     <div class="container">
-        <div class="heart-container">
-            <div class="heart"></div>
+        <div class="envelope" id="envelope">
+            <div class="front"></div>
+            <div class="card">
+                <div class="text">Click to open</div>
+            </div>
+            <div class="flap"></div>
         </div>
         
-        <div class="content hidden" id="main-content">
-            <h1 class="title">For My Dearest</h1>
-            <p class="message">Every moment with you makes life more beautiful</p>
+        <div class="content" id="content">
+            <div class="header">
+                <h1 class="title">Happy Mensive, <span class="partner-name">Sayang</span>!</h1>
+                <p class="subtitle" id="days-together"></p>
+            </div>
+            
+            <div class="heart-container">
+                <div class="heart"></div>
+            </div>
+            
+            <div class="message">
+                <p>Thank you for filling my life with love and happiness.</p>
+                <p>I cherish every moment with you.</p>
+            </div>
             
             <div class="gallery">
-                <div class="photo-container">
-                    <div class="polaroid" data-message="Remember our first date?">
-                        <!-- Replace with your image URL -->
-                        <img src="https://images.unsplash.com/photo-1522673607200-164d1b6ce486" alt="Memory 1">
-                        <p class="caption">Our First Date</p>
+                <h2>Our Memories</h2>
+                <div class="memory-container">
+                    <div class="memory">
+                        <div class="polaroid">
+                            <div class="photo photo1"></div>
+                            <p>Our first date</p>
+                        </div>
                     </div>
-                </div>
-                
-                <div class="photo-container">
-                    <div class="polaroid" data-message="The day we went to the beach was magical!">
-                        <!-- Replace with your image URL -->
-                        <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e" alt="Memory 2">
-                        <p class="caption">Beach Day</p>
+                    <div class="memory">
+                        <div class="polaroid">
+                            <div class="photo photo2"></div>
+                            <p>Your Beautiful Smile</p>
+                        </div>
                     </div>
-                </div>
-                
-                <div class="photo-container">
-                    <div class="polaroid" data-message="I love your smile so much!">
-                        <!-- Replace with your image URL -->
-                        <img src="https://images.unsplash.com/photo-1523301343968-6a6ebf63c672" alt="Memory 3">
-                        <p class="caption">Your Beautiful Smile</p>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="message-section">
-                <h2>Why I Love You</h2>
-                <div class="reasons-container">
-                    <div class="reason">
-                        <i class="fas fa-heart"></i>
-                        <p>Your kindness towards everyone you meet</p>
-                    </div>
-                    <div class="reason">
-                        <i class="fas fa-star"></i>
-                        <p>The way you make me laugh even on my worst days</p>
-                    </div>
-                    <div class="reason">
-                        <i class="fas fa-infinity"></i>
-                        <p>How you understand me better than anyone else</p>
+                    <div class="memory">
+                        <div class="polaroid">
+                            <div class="photo photo3"></div>
+                            <p>The day we made it official</p>
+                        </div>
                     </div>
                 </div>
             </div>
             
-            <div class="special-moment">
-                <h2>Our Special Song</h2>
-                <div class="music-player">
-                    <i class="fas fa-play" id="play-button"></i>
-                    <div class="track-info">
-                        <p class="song-title">Perfect</p>
-                        <p class="artist">Ed Sheeran</p>
+            <div class="interactive-section">
+                <h2>Click the hearts to reveal why I love you</h2>
+                <div class="floating-hearts">
+                    <div class="floating-heart" data-message="Your smile brightens my darkest days.">❤️</div>
+                    <div class="floating-heart" data-message="You understand me like no one else.">❤️</div>
+                    <div class="floating-heart" data-message="Your kindness inspires me to be better.">❤️</div>
+                    <div class="floating-heart" data-message="You make ordinary moments extraordinary.">❤️</div>
+                    <div class="floating-heart" data-message="You're my best friend and soulmate.">❤️</div>
+                </div>
+                <div class="revealed-message" id="revealed-message"></div>
+            </div>
+            
+            <!-- <div class="timeline">
+                <h2>Our Journey Together</h2>
+                <div class="timeline-container">
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-date">First Meeting</div>
+                        <div class="timeline-content">The day our story began</div>
                     </div>
-                    <div class="progress-bar">
-                        <div class="progress"></div>
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-date">First Date</div>
+                        <div class="timeline-content">When I knew you were special</div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-date">Official Couple</div>
+                        <div class="timeline-content">The beginning of us</div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-date">Today</div>
+                        <div class="timeline-content">Celebrating our love</div>
+                    </div>
+                </div>
+            </div> -->
+            
+            <div class="music-player">
+                <h2>Our Song</h2>
+                <div class="player-controls">
+                    <button id="play-button" class="play-button">
+                        <i class="fas fa-play"></i>
+                    </button>
+                    <div class="song-info">
+                        <div class="song-title">XXL</div>
+                        <div class="song-artist">LANY</div>
                     </div>
                 </div>
             </div>
             
-            <div class="letter">
-                <h2>My Letter to You</h2>
-                <div class="letter-content">
-                    <p>My Dearest,</p>
-                    <p>I created this small digital space to show you how much you mean to me. Every day with you is a blessing, and I wanted to capture just a glimpse of the joy you bring to my life.</p>
-                    <p>You make my heart skip a beat when you smile. You make me want to be a better person. You are my sunshine on cloudy days.</p>
-                    <p>I cherish every moment with you, every laugh we share, every challenge we overcome together, and every dream we build.</p>
-                    <p>I love you more than words can express.</p>
-                    <p>Forever Yours,</p>
-                    <p class="signature">Me</p>
-                </div>
+            <div class="final-message">
+                <h2 class="beating-heart">I Love You ❤️</h2>
+                <button id="confetti-button" class="confetti-button">Click for a Surprise!</button>
             </div>
-            
-            <button class="special-button" id="special-button">Click For A Surprise</button>
-        </div>
-        
-        <div class="flowers">
-            <div class="flower flower1"></div>
-            <div class="flower flower2"></div>
-            <div class="flower flower3"></div>
-            <div class="flower flower4"></div>
-        </div>
-    </div>
-    
-    <!-- Message Modal -->
-    <div class="message-modal" id="message-modal">
-        <div class="modal-content">
-            <span class="close-button">&times;</span>
-            <p id="modal-message"></p>
         </div>
     </div>
     
-    <!-- Surprise Modal -->
-    <div class="surprise-modal" id="surprise-modal">
-        <div class="modal-content">
-            <span class="close-surprise">&times;</span>
-            <h2>I Love You!</h2>
-            <div class="flying-hearts-container"></div>
-            <p>You make every day special. Thank you for being in my life.</p>
-            <div class="kiss">😘</div>
-        </div>
-    </div>
-    
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
     <script src="script.js"></script>
 </body>
 </html>
